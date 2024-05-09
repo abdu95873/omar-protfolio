@@ -1,0 +1,12 @@
+    #nav ul li a {
+
+        color: #e5e7eb !important;
+
+    }
+
+    .dropdown a:active {
+        color: white !important;
+        /* Text color when active */
+    }
+
+   
