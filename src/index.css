@@ -84,8 +84,8 @@ body {
 }
 
 .swiper-slide {
-  width: 28rem !important;
-  height: 36rem !important;
+  width: 47rem !important;
+  height: 28rem !important;
 }
 
 @media (max-width: 500px) {
@@ -174,10 +174,11 @@ body {
   content: '';
 }
 
-.swiper-pagination {
+/* .swiper-pagination {
   position: relative;
   width: 15rem !important;
   bottom: 1rem;
+
 }
 
 .swiper-pagination .swiper-pagination-bullet {
@@ -186,4 +187,11 @@ body {
 
 .swiper-pagination .swiper-pagination-bullet-active {
   background: var(--primary);
+} */
+
+span{
+  display:flex !important;
+}
+.label-text{
+  color: #ffffff;
 }
