@@ -5,6 +5,7 @@
   text-align: center;
 }
 
+
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -39,4 +40,44 @@
 
 .read-the-docs {
   color: #888;
+}
+
+
+.gallery-container {
+  padding: 20px;
+}
+
+.filter-buttons .btn {
+  background-color: #ddd;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-buttons .btn-active {
+  background-color: #f9a825;
+  color: white;
+}
+
+.my-masonry-grid {
+  display: flex;
+  margin-left: -20px; /* Adjust for gutter size */
+  width: auto;
+}
+
+.my-masonry-grid_column {
+  padding-left: 20px; /* Adjust for gutter size */
+  background-clip: padding-box;
+}
+
+.my-masonry-grid_column > div {
+  margin-bottom: 20px; /* Adjust for gutter size */
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
 }

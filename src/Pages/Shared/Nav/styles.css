@@ -1,12 +1,82 @@
-    #nav ul li a {
 
-        color: #e5e7eb !important;
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000;
+    color: white;
+  }
+  
+  .logo {
+    width: 46px;
+    font-size: 1.5em;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 5px;
+  }
+  
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: .8em;
+    z-index: 2;
 
+  }
+  
+  .nav-link:hover {
+    background-color:  rgb(254, 135, 37);
+    z-index:1;
+  }
+
+  .nav-link.active {
+    background-color: rgb(251, 146, 60);
+    color: #fff;
+  }
+  
+  .menu-icon {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 600px) {
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #000000;
+      position: absolute;
+      top: 50px;
+      right: 20px;
+      width: 150px;
+      border-radius: 5px;
+      z-index: 1;
     }
-
-    .dropdown a:active {
-        color: white !important;
-        /* Text color when active */
+  
+    .nav-links.open {
+      display: flex;
     }
-
-   
+  
+    .nav-links a {
+      padding: 10px;
+      border-bottom: 1px solid #555;
+    }
+  
+    .nav-links a:last-child {
+      border-bottom: none;
+    }
+  
+    .menu-icon {
+      display: block;
+    }
+  }
+  

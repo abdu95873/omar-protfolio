@@ -1,0 +1,9 @@
+
+#bgImage {
+    background-image: url('../../../assets/Social Media/black-background-04-coolbackgrounds.png');
+    /* Additional styles for the background */
+    background-size: cover;
+    background-position: center;
+    
+    height: 25vh; /* Full viewport height */
+}

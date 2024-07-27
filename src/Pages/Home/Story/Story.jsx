@@ -1,32 +1,64 @@
-import React from 'react';
+import axios from 'axios';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 const Story = () => {
+
+
+    const [imageData, setImageData] = useState(null);
+    const [textOneData, setTextOneData] = useState(null);
+    const [textTwoData, setTextTwoData] = useState(null);
+    const [nameData, setNameData] = useState(null);
+    const [designationData, setDesignationData] = useState(null);
+
+    useEffect(() => {
+        axios.get('http://localhost:5000/storySection')
+            .then(response => {
+                console.log('Response:', response.data);
+                if (response.data.length > 0) {
+                    setImageData(response.data[0].image);
+                    setTextOneData(response.data[0].textOne);
+                    setTextTwoData(response.data[0].textTwo);
+                    setNameData(response.data[0].name);
+                    setDesignationData(response.data[0].designation);
+                } else {
+                    console.error('No youtube url found.');
+                }
+            })
+            .catch(error => {
+                console.error('Error fetching data:', error);
+            });
+    }, []);
+
     return (
-        <div className='grid grid-cols-2 gap-16 py-20 '>
-            <div className='bg-black text-white py-20 mx-10'>
-                <div className='mx-10 my-10'>
-                    <h3 className='text-xl text-orange-400'>PORTFOLIO</h3>
-                    <p className='text-6xl'>FEATURED PROJECT</p>
-                </div>
-                <div>
-                    Aliquam ex lacus, venenatis id finibus ut, scelerisque at felis. Nulla facilisi. Sed fringilla enim consectetur cursus euismod. Sed vel magna in ex malesuada rhoncus ac a turpis.
-                    <br /><br />
-
-                    ” Vivamus quam lectus, facilisis a massa facilisis, imperdiet maximus nunc. Integer ut metus eget lectus imperdiet pulvinar in ac urna “
-
-                    <br /><br />
-                    <p className='text-xl text-orange-400'>DYAS KARDINAL</p>
-                    <p className='text-xl'>CEO OF CINESTAR</p>
-                </div>
+        <div className='py-20 my-20'>
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-16' >
                 
+                <div className='bg-black text-slate-50 py-20 mx-10'>
+                    <div >
+                        <h3 className='text-2xl font-bold text-orange-400'>STORY</h3>
+                        <p className='text-6xl' style={{ fontFamily: '"Times New Roman", Times, serif' }}>FEATURED PROJECT</p>
+                    </div>
+                    <br />
+                    <div className='pt-20'>
+                        {textOneData}
+                        <br /><br />
+                        {textTwoData}
+                        <br /><br />
+                        <p className='text-xl text-orange-400'>{nameData}</p>
+                        <p className='text-xl'>{designationData}</p>
+                    </div>
+                </div>
 
-            </div>
-            <div>
-            <div>
-                    <img src="" alt="img" />
+                <div>
+                    <div className='flex justify-center' style={{ height: '50rem' }}>
+                        <img src={imageData} alt="img" className=' w-auto h-full' style={{ objectFit: 'cover' }} />
+                    </div>
                 </div>
             </div>
-
+            <Link className="text-slate-300 flex justify-center mt-20" to="/allStory">
+                    <button className="text-lg hover:underline">See More</button>
+                </Link>
         </div>
     );
 };
