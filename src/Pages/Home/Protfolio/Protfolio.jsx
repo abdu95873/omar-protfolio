@@ -7,7 +7,7 @@ const Portfolio = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/portfolioImage');
+                const response = await fetch('https://omar-server-side.vercel.app/portfolioImage');
                 const data = await response.json();
                 setLoadImages(data);
             } catch (error) {

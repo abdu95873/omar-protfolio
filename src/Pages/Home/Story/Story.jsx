@@ -12,7 +12,7 @@ const Story = () => {
     const [designationData, setDesignationData] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/storySection')
+        axios.get('https://omar-server-side.vercel.app/storySection')
             .then(response => {
                 console.log('Response:', response.data);
                 if (response.data.length > 0) {

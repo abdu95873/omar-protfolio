@@ -8,7 +8,7 @@ const AllAbout = () => {
     const [detailsData, setDetailsData] = useState(null); 
 
     useEffect(() => {
-        axios.get('http://localhost:5000/about')
+        axios.get('https://omar-server-side.vercel.app/about')
             .then(response => {
                 console.log('Response:', response.data);
                 if (response.data.length > 0) {

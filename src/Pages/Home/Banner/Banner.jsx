@@ -5,7 +5,7 @@ const Banner = () => {
     const [bannerData, setBannerData] = useState(null);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/bannerImage')
+        axios.get('https://omar-server-side.vercel.app/bannerImage')
             .then(response => {
                 console.log('Response:', response.data);
                 if (response.data.length > 0) {

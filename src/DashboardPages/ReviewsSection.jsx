@@ -14,7 +14,7 @@ const ReviewsSection = () => {
             designation
         };
 
-        fetch(`http://localhost:5000/reviewSection`, {
+        fetch(`https://omar-server-side.vercel.app/reviewSection`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

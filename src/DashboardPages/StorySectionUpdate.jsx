@@ -27,7 +27,7 @@ const StorySectionUpdate = () => {
             textTwo
         };
 
-        fetch(`http://localhost:5000/storySection/${loadedUrl._id}`, {
+        fetch(`https://omar-server-side.vercel.app/storySection/${loadedUrl._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -63,7 +63,7 @@ const StorySectionUpdate = () => {
                     image: data.data.url,
                 }
 
-                return fetch(`http://localhost:5000/storySection/${loadedUrl._id}`, {
+                return fetch(`https://omar-server-side.vercel.app/storySection/${loadedUrl._id}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",

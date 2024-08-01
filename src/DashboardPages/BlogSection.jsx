@@ -35,7 +35,7 @@ const BlogSection = () => {
                 image: imageUrl
             };
 
-            return fetch(`http://localhost:5000/blogSection`, {
+            return fetch(`https://omar-server-side.vercel.app/blogSection`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

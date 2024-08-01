@@ -10,7 +10,7 @@ const CustomerQuery = () => {
     }, []);
 
     const fetchCustomerInfo = () => {
-        axios.get('http://localhost:5000/customerInfo')
+        axios.get('https://omar-server-side.vercel.app/customerInfo')
             .then(response => {
                 // Sort the data by name in descending order (Z to A)
                 const sortedData = response.data.sort((a, b) => {
@@ -33,7 +33,7 @@ const CustomerQuery = () => {
             return customer;
         });
 
-        axios.patch(`http://localhost:5000/customerInfo/${_id}`, { states: 'read' })
+        axios.patch(`https://omar-server-side.vercel.app/customerInfo/${_id}`, { states: 'read' })
             .then(response => {
                 if (response.data.updated) {
                     Swal.fire({

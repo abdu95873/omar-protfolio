@@ -8,7 +8,7 @@ const Blog = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('http://localhost:5000/blogSection');
+                const response = await fetch('https://omar-server-side.vercel.app/blogSection');
                 const data = await response.json();
                 setLoadData(data);
             } catch (error) {

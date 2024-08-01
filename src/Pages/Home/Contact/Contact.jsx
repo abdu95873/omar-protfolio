@@ -28,7 +28,7 @@ const Contact = () => {
             states
         }
 
-        axios.post('http://localhost:5000/customerInfo', body, {
+        axios.post('https://omar-server-side.vercel.app/customerInfo', body, {
             headers: {
                 'Content-Type': 'application/json'
             }

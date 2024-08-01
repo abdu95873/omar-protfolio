@@ -16,7 +16,7 @@ const BlogSectionUpdate = () => {
             details
         };
 
-        fetch(`http://localhost:5000/blogSection/${loadedUrl._id}`, {
+        fetch(`https://omar-server-side.vercel.app/blogSection/${loadedUrl._id}`, {
             method: "PATCH",
             headers: {
                 "Content-Type": "application/json",
@@ -51,7 +51,7 @@ const BlogSectionUpdate = () => {
                     image: data.data.url,
                 }
 
-                fetch(`http://localhost:5000/blogSection/${loadedUrl._id}`, {
+                fetch(`https://omar-server-side.vercel.app/blogSection/${loadedUrl._id}`, {
                     method: "PATCH",
                     headers: {
                         "Content-Type": "application/json",
