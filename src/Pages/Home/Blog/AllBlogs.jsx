@@ -8,7 +8,7 @@ const AllBlogs = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://omar-server-side.vercel.app/blogSection');
+                const response = await fetch('http://localhost:5000/blogSection');
                 const data = await response.json();
                 setaLoadData(data);
 
@@ -23,25 +23,17 @@ const AllBlogs = () => {
 
 
     return (
-        <div className='py-20 m-20'>
+        <div className='py-20 mx-10 md:mx-72'>
             <div className="">
-                <div className='grid grid-cols-1 md:grid-cols-2 mx-4 pb-10  gap-4 md:gap-10'>
-                    <div className='bg-black text-slate-50 py-20 mx-10'>
-                        <div >
-                            <h3 className='text-2xl font-bold text-orange-400'>BLOG</h3>
-                            <p className='text-6xl'>FEATURED PROJECT</p>
-                        </div>
-                    </div>
-                    <div className="text-slate-50 pt-10">
-                        <p>Proin et magna blandit arcu pellentesque scelerisque sit amet a sapien. Aenean purus nunc, cursus in ante in, vehicula facilisis dui. Integer consequat consectetur est id blandit. Duis fermentum nulla non mi tempor elementum. Donec efficitur ac eros quis porta.</p>
-                    </div>
+                <div className='grid grid-cols-1 md:grid-cols-2 pb gap-4 md:gap-10'>
+                    
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
 
                     {
                         loadData.map(data =>
-                            <div key={data._id} className="card card-compact bg-black shadow-xl rounded-none border p-1 border-white " style={{ height: '40rem' }}>
+                            <div key={data._id} className="card card-compact bg-custom-black shadow-xl rounded-none border p-1 border-white " style={{ height: '40rem' }}>
                                 <figure>
                                     <img className=""
                                         src={data.image}

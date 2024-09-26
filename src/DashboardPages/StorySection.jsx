@@ -39,7 +39,7 @@ const StorySection = () => {
                     designation
                 };
 
-                return fetch(`https://omar-server-side.vercel.app/storySection`, {
+                return fetch(`http://localhost:5000/storySection`, {
                     method: "POST",
                     headers: {
                         "Content-Type": "application/json",

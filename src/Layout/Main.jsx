@@ -7,7 +7,7 @@ const Main = () => {
     const hideNavbarFooter = location.pathname === '/login';
 
     return (
-        <div>
+        <div className='bg-custom-black'>
             {!hideNavbarFooter && <Navbar />}
             <Outlet />
             {!hideNavbarFooter && <Footer />}

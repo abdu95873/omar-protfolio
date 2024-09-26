@@ -7,7 +7,7 @@ import film from '../../../assets/Service/film-reel.png'
 
 const Services = () => {
     return (
-        <div className='pb-20 mx-auto my-20' id='body'>
+        <div className='p-20 mx-auto my-20' id='body'>
             <div className='mx-10 my-10 text-center pt-14'>
                 <h3 className='text-2xl font-bold text-orange-400'>SERVICES</h3>
                 <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>WHAT THEY SAY ABOUT OUR STUDIO ? </p>

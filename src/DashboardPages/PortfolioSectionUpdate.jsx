@@ -28,7 +28,7 @@ const PortfolioSectionUpdate = () => {
                 image: data.data.url,
             };
 
-            return fetch(`https://omar-server-side.vercel.app/portfolioImage/${loadedUrl._id}`, {
+            return fetch(`http://localhost:5000/portfolioImage/${loadedUrl._id}`, {
                 method: "PUT",
                 headers: {
                     "Content-Type": "application/json",

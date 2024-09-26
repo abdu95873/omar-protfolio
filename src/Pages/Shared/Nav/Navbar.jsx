@@ -30,17 +30,18 @@ function Navbar() {
     { name: 'CONTACT', to: '/contact', style: { fontFamily: '"Times New Roman", Times, serif' } }
   ];
   return (
-    <nav className="navbar">
-      <div className="ps-10">
+    <nav className="navbar shadow-xl">
+      <div className="ps-72 ">
         <img className="logo text-orange-400" src={logo} alt="Logo" />
         <img className="w-40" src={omar} alt="Omar" />
       </div>
-      <div className={`pr-10 nav-links ${isNavOpen ? 'open' : ''}`} id="nav-links">
+      <div className={`pr-72 nav-links ${isNavOpen ? 'open' : ''}`} id="nav-links">
         {links.map((link) => (
           <Link
             key={link.name}
             to={link.to}
             className={`nav-link ${activeLink === link.name ? 'active' : ''}`}
+            style={{ fontSize: '12px' }}
           >
             {link.name}
           </Link>

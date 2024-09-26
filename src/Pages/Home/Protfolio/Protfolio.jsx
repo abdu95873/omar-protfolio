@@ -7,7 +7,7 @@ const Portfolio = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://omar-server-side.vercel.app/portfolioImage');
+                const response = await fetch('http://localhost:5000/portfolioImage');
                 const data = await response.json();
                 setLoadImages(data);
             } catch (error) {
@@ -19,12 +19,106 @@ const Portfolio = () => {
     }, []);
 
     return (
-        <div className='mx-10 my-10'>
-           <div className="my-10">
-           <h3 className='text-2xl font-bold text-orange-400'>PORTFOLIO</h3>
-           <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>WHAT THEY SAY ABOUT OUR STUDIO ? </p>
-           </div>
+        <div className='mx-10 pb-20 md:py-20 md:mx-72 bg-custom-black'>
+            <div className="my-20">
+                <h3 className='text-2xl font-bold text-orange-400'>PORTFOLIO</h3>
+                <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>WHAT THEY SAY ABOUT OUR STUDIO ? </p>
+            </div>
 
+            <Marquee className="text-slate-50 w-full" direction="right" speed={10}>
+                <div className="flex flex-row space-x-10 px-5">
+
+
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+
+                </div>
+            </Marquee>
+            <div >
+                <br />
+            </div>
             <Marquee className="text-slate-50">
                 <div className="flex flex-row space-x-10 px-5"> {/* Added padding here */}
                     {loadImages.map(image => (
@@ -40,6 +134,100 @@ const Portfolio = () => {
                             </div>
                         </div>
                     ))}
+                </div>
+            </Marquee>
+            <div >
+                <br />
+            </div>
+            <Marquee className="text-slate-50 w-full" direction="right" speed={10}>
+                <div className="flex flex-row space-x-10 px-5">
+
+
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+                    <figure>
+                        <div className="bg-stone-500 w-10 h-3"></div>
+                    </figure>
+
                 </div>
             </Marquee>
 

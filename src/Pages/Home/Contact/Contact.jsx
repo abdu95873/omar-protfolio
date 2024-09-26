@@ -28,7 +28,7 @@ const Contact = () => {
             states
         }
 
-        axios.post('https://omar-server-side.vercel.app/customerInfo', body, {
+        axios.post('http://localhost:5000/customerInfo', body, {
             headers: {
                 'Content-Type': 'application/json'
             }
@@ -51,10 +51,10 @@ const Contact = () => {
     }
 
     return (
-        <div>
-            <div className=" bg-black text-black py-20 mg-20 bg-slate-600 ">
-                <div className="grid grid-cols-1 md:grid-cols-2 mx-20">
-                    <div className="card shrink-0 w-full shadow-2xl bg-black -">
+        <div className='md:mx-72 bg-custom-black md:shadow-2xl'>
+            <div className=" bg-black text-black py-20 mg-20 bg-custom-black ">
+                <div className="grid grid-cols-1 md:grid-cols-2">
+                    <div className="card shrink-0 w-full shadow-2xl bg-custom-black">
                         <div className='mx-10 my-10 md:hidden'>
                             <h3 className='text-2xl font-bold text-orange-400'>CONTACT</h3>
                             <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>REQUEST CALL BACK</p>
@@ -63,11 +63,11 @@ const Contact = () => {
                         </div>
 
                         <form onSubmit={handleAddClass} className="card-body">
-                            <div className='grid grid-cols-2 gap-5'>
-                                <div className="form-control">
+                            <div className='md:grid md:grid-cols-2 gap-5'>
+                                <div className="form-control mb-5 dm:mb-0">
                                     <input type="text" name="name" placeholder="First Name" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control mb-5 md:mb-0">
                                     <input
                                         type="tel"
                                         name="number"
@@ -78,13 +78,13 @@ const Contact = () => {
                                         required
                                     />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control mb-5 dm:mb-0">
                                     <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control">
+                                <div className="form-control mb-5 dm:mb-0">
                                     <input type="text" name="subject" placeholder="Subject" className="input input-bordered" required />
                                 </div>
-                                <div className="form-control col-span-2 row-span-2">
+                                <div className="form-control col-span-2 row-span-2 mb-5 dm:mb-0">
                                     <input type="text" name="massage" placeholder="Massage" className="input input-bordered h-28" required />
                                 </div>
                             </div>
@@ -96,7 +96,7 @@ const Contact = () => {
                     </div>
 
                     <div className='mx-10 my-10 hidden sm:block'>
-                        <h3 className='text-2xl font-bold text-orange-400'>CONTACT</h3>
+                        <h3 className='mb-2 text-2xl text-orange-400'>CONTACT</h3>
                         <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>REQUEST CALL BACK</p>
                         <br />
                         <p className='text-slate-50'>Nulla facilisi. Praesent non mauris ac ligula ullamcorper vehicula. Praesent mollis, nibh in venenatis iaculis, mauris eros iaculis quam, ut aliquam nisi nunc vitae quam. Fusce faucibus, felis at fermentum convallis, nunc neque aliquam turpis, ut varius ipsum nisi eu magna. Sed euismod laoreet nisi, eu iaculis elit scelerisque non.</p>

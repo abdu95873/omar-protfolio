@@ -12,7 +12,7 @@ const Story = () => {
     const [designationData, setDesignationData] = useState(null);
 
     useEffect(() => {
-        axios.get('https://omar-server-side.vercel.app/storySection')
+        axios.get('http://localhost:5000/storySection')
             .then(response => {
                 console.log('Response:', response.data);
                 if (response.data.length > 0) {
@@ -31,10 +31,10 @@ const Story = () => {
     }, []);
 
     return (
-        <div className='py-20 my-20'>
+        <div className='pb-24 md:py-24 my-24 md:mx-72 bg-custom-black'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-16' >
                 
-                <div className='bg-black text-slate-50 py-20 mx-10'>
+                <div className='bg-custom-black text-slate-50 pt-14 md:py-32 mx-10'>
                     <div >
                         <h3 className='text-2xl font-bold text-orange-400'>STORY</h3>
                         <p className='text-6xl' style={{ fontFamily: '"Times New Roman", Times, serif' }}>FEATURED PROJECT</p>
@@ -52,12 +52,12 @@ const Story = () => {
 
                 <div>
                     <div className='flex justify-center' style={{ height: '50rem' }}>
-                        <img src={imageData} alt="img" className=' w-auto h-full' style={{ objectFit: 'cover' }} />
+                        <img src={imageData} alt="img" className=' w-auto h-full  rounded-tr-3xl rounded-bl-3xl' style={{ objectFit: 'cover' }} />
                     </div>
                 </div>
             </div>
-            <Link className="text-slate-300 flex justify-center mt-20" to="/allStory">
-                    <button className="text-lg hover:underline">See More</button>
+            <Link className="text-slate-300 flex justify-end mt-20" to="/allStory">
+                    <button className="text-lg hover:text-orange-400">See More</button>
                 </Link>
         </div>
     );

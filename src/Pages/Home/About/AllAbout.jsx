@@ -8,7 +8,7 @@ const AllAbout = () => {
     const [detailsData, setDetailsData] = useState(null); 
 
     useEffect(() => {
-        axios.get('https://omar-server-side.vercel.app/about')
+        axios.get('http://localhost:5000/about')
             .then(response => {
                 console.log('Response:', response.data);
                 if (response.data.length > 0) {
@@ -24,9 +24,9 @@ const AllAbout = () => {
             });
     }, []);
     return (
-        <div className='bg-black text-slate-50 my-10'>
-            <div className='grid grid-cols-1 md:grid-cols-5 mx-10 gap-20'>
-                <div className="relative overflow-hidden col-span-3 " style={{ paddingTop: "56.25%" }}> {/* 16:9 aspect ratio */}
+        <div className='bg-custom-black text-slate-50 my-10'>
+            <div className='grid grid-cols-1 md:grid-cols-5 mx-10 gap-20 hover:shadow-2xl'>
+                <div className="relative overflow-hidden col-span-3 shadow-xl" style={{ paddingTop: "56.25%" }}> {/* 16:9 aspect ratio */}
                     <iframe
                         className="absolute top-0 left-0 w-full h-full"
                         src={urlData}

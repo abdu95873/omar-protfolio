@@ -35,7 +35,7 @@ const BannerSectionUpdate = () => {
                     image: data.data.url,
                 }
 
-                fetch(`https://omar-server-side.vercel.app/bannerImage/${loadedUrl._id}`, {
+                fetch(`http://localhost:5000/bannerImage/${loadedUrl._id}`, {
                     method: "PUT",
                     headers: {
                         "Content-Type": "application/json",

@@ -10,7 +10,7 @@ import Services from '../Services/Services';
 
 const Home = () => {
     return (
-        <div>
+        <div className='bg-custom-black'>
           <Banner></Banner>
           <About></About>
           <Protfolio></Protfolio>

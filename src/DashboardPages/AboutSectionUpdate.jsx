@@ -12,7 +12,7 @@ const AboutSectionUpdate = () => {
         const url = form.url.value;
         const details = form.details.value;
 
-        fetch(`https://omar-server-side.vercel.app/about/${loadAbout._id}`, { 
+        fetch(`http://localhost:5000/about/${loadAbout._id}`, { 
             method: "PUT",
             headers: {
                 "Content-Type": "application/json",

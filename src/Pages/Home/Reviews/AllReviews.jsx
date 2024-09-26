@@ -8,7 +8,7 @@ const AllReviews = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://omar-server-side.vercel.app/reviewSection');
+                const response = await fetch('http://localhost:5000/reviewSection');
                 const data = await response.json();
                 setLoadData(data);
             } catch (error) {
@@ -20,10 +20,10 @@ const AllReviews = () => {
     }, []);
 
     return (
-        <div className='gap-10 grid grid-cols-3 p-10'>
+        <div className='md:mx-72 md:my-20 gap-10 md:grid grid-cols-3 p-10'>
                     {loadData.map(data => (
-                        <div key={data._id} className="card bg-slate-700 text-slate-50 shadow-xl">
-                            <div className="card-body w-96">
+                        <div key={data._id} className="mb-10 card bg-custom-black-2 text-slate-50">
+                            <div className="card-body w-full">
                                 <p className='text-2xl'>{data.review}</p>
                                 <br /><br />
                                 <div className='flex justify-between'>

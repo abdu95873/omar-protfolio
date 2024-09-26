@@ -59,7 +59,7 @@ export const router = createBrowserRouter([
 
                 path: "/protfolio",
                 element: <Protfolio></Protfolio>,
-                loader: () => fetch(`https://omar-server-side.vercel.app/portfolioImage`)
+                loader: () => fetch(`http://localhost:5000/portfolioImage`)
 
             },
             {
@@ -96,7 +96,7 @@ export const router = createBrowserRouter([
             {
                 path: "/singleBlog/:id",
                 element: <SingleBlog></SingleBlog>,
-                loader: ({ params }) => fetch(`https://omar-server-side.vercel.app/blogSection/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/blogSection/${params.id}`)
 
             },
 
@@ -137,49 +137,49 @@ export const router = createBrowserRouter([
 
                 path: "/dashboard/aboutSection",
                 element: <AboutSection></AboutSection>,
-                loader: () => fetch(`https://omar-server-side.vercel.app/about`)
+                loader: () => fetch(`http://localhost:5000/about`)
             },
             {
 
                 path: "/dashboard/aboutSection/:id",
                 element: <AboutSectionUpdate></AboutSectionUpdate>,
-                loader: ({ params }) => fetch(`https://omar-server-side.vercel.app/about/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/about/${params.id}`)
             },
             {
 
                 path: "/dashboard/bannerSection",
                 element: <BannerSection></BannerSection>,
-                loader: () => fetch(`https://omar-server-side.vercel.app/bannerImage`)
+                loader: () => fetch(`http://localhost:5000/bannerImage`)
             },
             {
 
                 path: "/dashboard/bannerSectionUpdate/:id",
                 element: <BannerSectionUpdate></BannerSectionUpdate>,
-                loader: ({ params }) => fetch(`https://omar-server-side.vercel.app/bannerImage/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/bannerImage/${params.id}`)
             },
             {
 
                 path: "/dashboard/blogSection",
                 element: <BlogSection></BlogSection>,
-                loader: () => fetch(`https://omar-server-side.vercel.app/blogSection`)
+                loader: () => fetch(`http://localhost:5000/blogSection`)
             },
             {
 
                 path: "/dashboard/blogSectionUpdate/:id",
                 element: <BlogSectionUpdate></BlogSectionUpdate>,
-                loader: ({ params }) => fetch(`https://omar-server-side.vercel.app/blogSection/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/blogSection/${params.id}`)
             },
             {
 
                 path: "/dashboard/portfolioSection",
                 element: <PortfolioSection></PortfolioSection>,
-                loader: () => fetch(`https://omar-server-side.vercel.app/portfolioImage`)
+                loader: () => fetch(`http://localhost:5000/portfolioImage`)
             },
             {
 
                 path: "/dashboard/portfolioSectionUpdate/:id",
                 element: <PortfolioSectionUpdate></PortfolioSectionUpdate>,
-                loader: ({ params }) => fetch(`https://omar-server-side.vercel.app/portfolioImage/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/portfolioImage/${params.id}`)
             },
             {
 
@@ -190,19 +190,19 @@ export const router = createBrowserRouter([
 
                 path: "/dashboard/storySection",
                 element: <StorySection></StorySection>,
-                loader: () => fetch(`https://omar-server-side.vercel.app/storySection`)
+                loader: () => fetch(`http://localhost:5000/storySection`)
             },
             {
 
                 path: "/dashboard/storySectionUpdate/:id",
                 element: <StorySectionUpdate></StorySectionUpdate>,
-                loader: ({ params }) => fetch(`https://omar-server-side.vercel.app/storySection/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/storySection/${params.id}`)
             },
             {
 
                 path: "/dashboard/gallerySection",
                 element: <GallerySection></GallerySection>,
-                loader: () => fetch(`https://omar-server-side.vercel.app/portfolioImage`)
+                loader: () => fetch(`http://localhost:5000/portfolioImage`)
 
             },
 

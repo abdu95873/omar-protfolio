@@ -11,23 +11,19 @@
 }
 
 .btn1 {
-    margin: 10px 10px;
-    /* Consistent top and bottom margin */
+    margin: 10px 10px; /* Consistent top and bottom margin */
     border: 1px solid #ddd;
+    font-family: '"Times New Roman", Times, serif'; /* Corrected the font declaration */
     border-radius: 5px;
-    background-color: #f0f0f0;
-    color: #333;
+    background-color: transparent;
+    color: #b6b5b5;
     font-size: 16px;
     cursor: pointer;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    display: inline-block;
-    /* Ensure buttons have the same size */
+    text-align: left;
+    display: inline-block; /* Ensure buttons have the same size */
     transition: background-color 0.3s, color 0.3s;
-    min-width: 120px;
-    /* Set a minimum width for consistency */
-    box-sizing: border-box;
-    /* Include padding and border in the element's total width and height */
+    min-width: 120px; /* Set a minimum width for consistency */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .btn1:hover {
@@ -44,21 +40,18 @@
 /* Masonry grid */
 .my-masonry-grid {
     display: flex;
-    margin-left: -15px;
-    /* gutter size offset */
+    margin-left: -15px; /* gutter size offset */
     width: auto;
 }
 
 .my-masonry-grid_column {
-    padding-left: 15px;
-    /* gutter size */
+    padding-left: 15px; /* gutter size */
     background-clip: padding-box;
 }
 
 /* Optional: Style for image containers */
-.my-masonry-grid_column>div {
-    margin-bottom: 15px;
-    /* space between rows */
+.my-masonry-grid_column > div {
+    margin-bottom: 15px; /* space between rows */
 }
 
 img {
