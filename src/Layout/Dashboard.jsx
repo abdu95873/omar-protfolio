@@ -1,109 +1,67 @@
-import React, { useContext } from 'react';
-import { NavLink, Outlet } from 'react-router-dom';
-import { AuthContext } from '../Providers/AuthProvider';
+import React, { useContext } from "react";
+import { NavLink, Outlet } from "react-router-dom";
+import { AuthContext } from "../Providers/AuthProvider";
 
 const Dashboard = () => {
-    const { user, logOut } = useContext(AuthContext);
+  const { user, logOut } = useContext(AuthContext);
 
-    const handleLogOut = () => {
-        logOut()
-            .then(result => {
-                const loggedInUser = result.user;
-                console.log(loggedInUser);
-            })
-            .catch(error => {
-                console.log(error);
-            })
-    }
-    
-    return (
-        <div className="drawer lg:drawer-open">
-            <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-            <div className="drawer-content flex flex-col bg-slate-300">
-                <Outlet />
-              
-            </div>
-            <div className="drawer-side">
-                <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                <ul className="menu bg-base-200 text-base-content min-h-full w-80 p-4 gap-3">
-                    {/* Sidebar content here */}
-                    <button onClick={handleLogOut} className="btn btn-error">Logout</button>
-                    <li>
-                        <NavLink
-                            to="/dashboard/aboutSection"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            About Section
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/dashboard/bannerSection"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            Banner Section
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/dashboard/blogSection"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            Blog Section
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/dashboard"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            Customer Query
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/dashboard/gallerySection"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            Gallery
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/dashboard/portfolioSection"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            Portfolio Section
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/dashboard/reviewsSection"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            Reviews Section
-                        </NavLink>
-                    </li>
-                    <li>
-                        <NavLink
-                            to="/dashboard/storySection"
-                            className={({ isActive }) => isActive ? 'text-lg active' : 'text-lg'}
-                            end
-                        >
-                            Story Section
-                        </NavLink>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    );
+  const handleLogOut = () => {
+    logOut()
+      .then((result) => {
+        const loggedInUser = result.user;
+        console.log(loggedInUser);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
+  return (
+    <div className="flex min-h-screen bg-gray-100">
+      {/* Sidebar */}
+      <aside className="w-72 bg-white shadow-lg flex-shrink-0 p-6 flex flex-col">
+        {/* Logout Button */}
+        <button
+          onClick={handleLogOut}
+          className="btn btn-error w-full mb-6"
+        >
+          Logout
+        </button>
+
+        {/* Navigation Links */}
+        <nav className="flex flex-col gap-3">
+          {[
+            { to: "/dashboard/aboutSection", label: "About Section" },
+            { to: "/dashboard/bannerSection", label: "Banner Section" },
+            { to: "/dashboard/blogSection", label: "Blog Section" },
+            { to: "/dashboard", label: "Customer Query" },
+            { to: "/dashboard/gallerySection", label: "Gallery" },
+            { to: "/dashboard/portfolioSection", label: "Portfolio Section" },
+            { to: "/dashboard/reviewsSection", label: "Reviews Section" },
+            { to: "/dashboard/storySection", label: "Story Section" },
+          ].map((link) => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              className={({ isActive }) =>
+                `text-lg p-2 rounded-md transition-colors duration-300 hover:bg-gray-200 ${
+                  isActive ? "bg-gray-200 font-bold text-orange-500" : ""
+                }`
+              }
+              end
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </nav>
+      </aside>
+
+      {/* Main Content */}
+      <main className="flex-1 p-6">
+        <Outlet />
+      </main>
+    </div>
+  );
 };
 
 export default Dashboard;

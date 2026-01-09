@@ -10,15 +10,16 @@ import Services from '../Services/Services';
 
 const Home = () => {
     return (
-        <div className='bg-custom-black'>
+        <div >
           <Banner></Banner>
           <About></About>
           <Protfolio></Protfolio>
-          <Services></Services>
+         
           <Story></Story>
           <Reviews></Reviews>
           <Contact></Contact>
           <Blog></Blog>
+          <Services></Services>
           <SocialMedia></SocialMedia>
           
         </div>

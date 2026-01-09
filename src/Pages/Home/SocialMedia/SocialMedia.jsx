@@ -1,16 +1,16 @@
 import { FaFacebook, FaYoutube } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa";
-import "./styles.css"
+// import "./styles.css"
 
 
 
 
 const SocialMedia = () => {
     return (
-        <div className="bg-custom-black ">
-            <div className="h-1 bg-slate-200 "></div>
+        <div className=" ">
+            <div className="h-1  "></div>
 
-            <div className='text-slate-50 w-full h-screen flex flex-col justify-center' id='bgImage'> {/* Set height to full screen */}
+            <div className=' w-full  flex flex-col justify-center' id='bgImage'> {/* Set height to full screen */}
             <div className='text-center my-auto'> {/* Centered text */}
         <h1 className='text-3xl md:text-4xl lg:text-5xl' style={{ fontFamily: '"Times New Roman", Times, serif' }}>HAVE AN IDEA IN YOUR MIND? START YOUR PROJECT WITH US</h1>
         <p className='text-lg md:text-xl lg:text-2xl font-bold text-orange-400'>CINESTAR STUDIO, +123-456-789 OR HELLO@AWESOMESITE.COM</p>

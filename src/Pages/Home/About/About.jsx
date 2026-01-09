@@ -28,7 +28,7 @@ const About = () => {
     }, []);
 
     return (
-        <div className='bg-custom-black text-slate-50 md:py-20 my-20 md:mx-72 shadow-xl'>
+        <div className='  md:py-20 my-20 md:mx-72 shadow-xl'>
             <div className='grid grid-cols-1 md:grid-cols-2 mx-4 md:mx-10 pb-10 md:pb-20 gap-4 md:gap-10'>
                 <div>
                     <h3 className='text-xl md:text-2xl font-bold text-orange-400'>CINESTER STUDIO</h3>

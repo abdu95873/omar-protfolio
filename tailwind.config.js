@@ -9,6 +9,7 @@ export default {
       colors: {
         'custom-black': '#151515', // Custom color
         'custom-black-2': '#282424', // Custom color
+        'custom-black-3': '#181414', // Custom color
 
       },
     },

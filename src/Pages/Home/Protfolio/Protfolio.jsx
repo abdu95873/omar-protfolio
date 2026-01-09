@@ -19,10 +19,10 @@ const Portfolio = () => {
     }, []);
 
     return (
-        <div className='mx-10 pb-20 md:py-20 md:mx-72 bg-custom-black'>
+        <div className='mx-10 pb-20 md:py-20 md:mx-72 '>
             <div className="my-20">
                 <h3 className='text-2xl font-bold text-orange-400'>PORTFOLIO</h3>
-                <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>WHAT THEY SAY ABOUT OUR STUDIO ? </p>
+                <p className='text-6xl ' style={{ fontFamily: '"Times New Roman", Times, serif' }}>WHAT THEY SAY ABOUT OUR STUDIO ? </p>
             </div>
 
             <Marquee className="text-slate-50 w-full" direction="right" speed={10}>

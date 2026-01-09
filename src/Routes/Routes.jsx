@@ -52,7 +52,7 @@ export const router = createBrowserRouter([
             },
             {
 
-                path: "/allAbout",
+                path: "/allVideos",
                 element: <AllAbout></AllAbout>
             },
             {
@@ -127,7 +127,7 @@ export const router = createBrowserRouter([
         children: [
             {
 
-                path: "/dashboard",
+                index:CustomerQuery,
                 element: <CustomerQuery></CustomerQuery>
 
 

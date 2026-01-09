@@ -59,10 +59,21 @@ html {
 }
 
 body {
+  margin: 0;
+  min-height: 100vh;
   font-size: 1.6rem;
-  background: var(--bg);
-  background-color: #000000;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  
+  /* dotted background */
+  background-image: radial-gradient(rgba(0, 0, 0, 0.05) 2px, transparent 2px);
+  background-size: 30px 30px;
+  background-attachment: fixed; /* stays fixed while scrolling */
+  background-repeat: repeat;
+
+  scroll-behavior: smooth;
 }
+
 
 .container {
   max-width: 124rem;
@@ -195,3 +206,5 @@ span{
 .label-text{
   color: #ffffff;
 }
+
+

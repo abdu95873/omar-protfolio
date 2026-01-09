@@ -14,78 +14,73 @@ const Contact = () => {
         const massage = form.massage.value;
         const states = 'unread';
         
-        
-        // Generating current date
+        // Current date
         const currentDate = new Date().toLocaleDateString('en-GB');
 
-        const body = {
-            name,
-            number,
-            email,
-            subject,
-            massage,
-            date: currentDate,
-            states
-        }
+        const body = { name, number, email, subject, massage, date: currentDate, states };
 
         axios.post('http://localhost:5000/customerInfo', body, {
-            headers: {
-                'Content-Type': 'application/json'
+            headers: { 'Content-Type': 'application/json' }
+        })
+        .then(response => {
+            if (response.data.acknowledged) {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Your query has been saved',
+                    showConfirmButton: false,
+                    timer: 1500
+                });
+                form.reset();
             }
         })
-            .then(response => {
-                if (response.data.acknowledged) {
-                    Swal.fire({
-                        position: 'top-end',
-                        icon: 'success',
-                        title: 'Your query has been saved',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    form.reset();
-                }
-            })
-            .catch(error => {
-                console.error(error);
-            });
-    }
+        .catch(error => console.error(error));
+    };
 
     return (
-        <div className='md:mx-72 bg-custom-black md:shadow-2xl'>
-            <div className=" bg-black text-black py-20 mg-20 bg-custom-black ">
+        <div className='md:mx-72 '>
+            <div className="py-20 mg-20">
                 <div className="grid grid-cols-1 md:grid-cols-2">
-                    <div className="card shrink-0 w-full shadow-2xl bg-custom-black">
+                    
+                    {/* Form Card */}
+                    <div className="card shrink-0 w-full shadow-2xl">
                         <div className='mx-10 my-10 md:hidden'>
-                            <h3 className='text-2xl font-bold text-orange-400'>CONTACT</h3>
-                            <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>REQUEST CALL BACK</p>
+                            <h3 className='text-2xl font-bold text-black'>CONTACT</h3>
+                            <p className='text-6xl text-black'>REQUEST CALL BACK</p>
                             <br />
-                            <p className='text-slate-50'>Nulla facilisi. Praesent non mauris ac ligula ullamcorper vehicula. Praesent mollis, nibh in venenatis iaculis, mauris eros iaculis quam, ut aliquam nisi nunc vitae quam. Fusce faucibus, felis at fermentum convallis, nunc neque aliquam turpis, ut varius ipsum nisi eu magna. Sed euismod laoreet nisi, eu iaculis elit scelerisque non.</p>
+                            <p className='text-black'>
+                                Nulla facilisi. Praesent non mauris ac ligula ullamcorper vehicula. 
+                                Praesent mollis, nibh in venenatis iaculis, mauris eros iaculis quam, 
+                                ut aliquam nisi nunc vitae quam. Fusce faucibus, felis at fermentum convallis, 
+                                nunc neque aliquam turpis, ut varius ipsum nisi eu magna. Sed euismod laoreet nisi, 
+                                eu iaculis elit scelerisque non.
+                            </p>
                         </div>
 
                         <form onSubmit={handleAddClass} className="card-body">
                             <div className='md:grid md:grid-cols-2 gap-5'>
                                 <div className="form-control mb-5 dm:mb-0">
-                                    <input type="text" name="name" placeholder="First Name" className="input input-bordered" required />
+                                    <input type="text" name="name" placeholder="First Name" className="input input-bordered text-black" required />
                                 </div>
                                 <div className="form-control mb-5 md:mb-0">
                                     <input
                                         type="tel"
                                         name="number"
                                         placeholder="Number"
-                                        className="input input-bordered"
+                                        className="input input-bordered text-black"
                                         inputMode="numeric"
                                         pattern="[0-9]{11}"
                                         required
                                     />
                                 </div>
                                 <div className="form-control mb-5 dm:mb-0">
-                                    <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
+                                    <input type="email" name="email" placeholder="Email" className="input input-bordered text-black" required />
                                 </div>
                                 <div className="form-control mb-5 dm:mb-0">
-                                    <input type="text" name="subject" placeholder="Subject" className="input input-bordered" required />
+                                    <input type="text" name="subject" placeholder="Subject" className="input input-bordered text-black" required />
                                 </div>
                                 <div className="form-control col-span-2 row-span-2 mb-5 dm:mb-0">
-                                    <input type="text" name="massage" placeholder="Massage" className="input input-bordered h-28" required />
+                                    <input type="text" name="massage" placeholder="Massage" className="input input-bordered h-28 text-black" required />
                                 </div>
                             </div>
 
@@ -95,11 +90,18 @@ const Contact = () => {
                         </form>
                     </div>
 
+                    {/* Info / Description */}
                     <div className='mx-10 my-10 hidden sm:block'>
-                        <h3 className='mb-2 text-2xl text-orange-400'>CONTACT</h3>
-                        <p className='text-6xl text-slate-50' style={{ fontFamily: '"Times New Roman", Times, serif' }}>REQUEST CALL BACK</p>
+                        <h3 className='mb-2 text-2xl text-black'>CONTACT</h3>
+                        <p className='text-6xl text-black'>REQUEST CALL BACK</p>
                         <br />
-                        <p className='text-slate-50'>Nulla facilisi. Praesent non mauris ac ligula ullamcorper vehicula. Praesent mollis, nibh in venenatis iaculis, mauris eros iaculis quam, ut aliquam nisi nunc vitae quam. Fusce faucibus, felis at fermentum convallis, nunc neque aliquam turpis, ut varius ipsum nisi eu magna. Sed euismod laoreet nisi, eu iaculis elit scelerisque non.</p>
+                        <p className='text-black'>
+                            Nulla facilisi. Praesent non mauris ac ligula ullamcorper vehicula. 
+                            Praesent mollis, nibh in venenatis iaculis, mauris eros iaculis quam, 
+                            ut aliquam nisi nunc vitae quam. Fusce faucibus, felis at fermentum convallis, 
+                            nunc neque aliquam turpis, ut varius ipsum nisi eu magna. Sed euismod laoreet nisi, 
+                            eu iaculis elit scelerisque non.
+                        </p>
                     </div>
                 </div>
             </div>
