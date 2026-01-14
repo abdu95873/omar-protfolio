@@ -12,7 +12,7 @@ const Gallery = () => {
 
     useEffect(() => {
         // Fetch images and categories from the server
-        axios.get('http://localhost:5000/gallerySection')
+        axios.get('https://omar-server-side.vercel.app/gallerySection')
             .then(response => {
                 const data = response.data;
                 setImages(data);

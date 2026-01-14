@@ -30,7 +30,7 @@ const AboutSectionUpdate = () => {
     const details = form.details.value;
 
     try {
-      const res = await fetch(`http://localhost:5000/about/${loadAbout._id}`, {
+      const res = await fetch(`https://omar-server-side.vercel.app/about/${loadAbout._id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ subtitle, url, details }),

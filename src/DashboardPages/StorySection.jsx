@@ -46,7 +46,7 @@ const StorySection = () => {
             const imageUrl = imgJson.data.url;
 
             // Save story to backend
-            const backendRes = await fetch("http://localhost:5000/storySection", {
+            const backendRes = await fetch("https://omar-server-side.vercel.app/storySection", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ textOne, textTwo, image: imageUrl, name, designation }),
@@ -94,7 +94,7 @@ const StorySection = () => {
 
         if (result.isConfirmed) {
             try {
-                const res = await fetch(`http://localhost:5000/storySection/${id}`, {
+                const res = await fetch(`https://omar-server-side.vercel.app/storySection/${id}`, {
                     method: "DELETE",
                 });
 

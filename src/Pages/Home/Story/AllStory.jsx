@@ -7,7 +7,7 @@ const AllStory = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:5000/storySection");
+        const response = await fetch("https://omar-server-side.vercel.app/storySection");
         const data = await response.json();
         setLoadData(data);
       } catch (error) {

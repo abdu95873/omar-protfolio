@@ -28,7 +28,7 @@ const StorySectionUpdate = () => {
                 if (!data.data) return console.error('Error uploading image:', data);
 
                 const imageUrl = { image: data.data.url };
-                return fetch(`http://localhost:5000/storySection/${loadedUrl._id}`, {
+                return fetch(`https://omar-server-side.vercel.app/storySection/${loadedUrl._id}`, {
                     method: "PATCH",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify(imageUrl),
@@ -54,7 +54,7 @@ const StorySectionUpdate = () => {
             designation: form.designation.value
         };
 
-        fetch(`http://localhost:5000/storySection/${loadedUrl._id}`, {
+        fetch(`https://omar-server-side.vercel.app/storySection/${loadedUrl._id}`, {
             method: "PATCH",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),

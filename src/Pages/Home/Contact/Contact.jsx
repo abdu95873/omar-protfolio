@@ -19,7 +19,7 @@ const Contact = () => {
 
         const body = { name, number, email, subject, massage, date: currentDate, states };
 
-        axios.post('http://localhost:5000/customerInfo', body, {
+        axios.post('https://omar-server-side.vercel.app/customerInfo', body, {
             headers: { 'Content-Type': 'application/json' }
         })
         .then(response => {
@@ -60,27 +60,27 @@ const Contact = () => {
                         <form onSubmit={handleAddClass} className="card-body">
                             <div className='md:grid md:grid-cols-2 gap-5'>
                                 <div className="form-control mb-5 dm:mb-0">
-                                    <input type="text" name="name" placeholder="First Name" className="input input-bordered text-black" required />
+                                    <input type="text" name="name" placeholder="First Name" className="input input-bordered " required />
                                 </div>
                                 <div className="form-control mb-5 md:mb-0">
                                     <input
                                         type="tel"
                                         name="number"
                                         placeholder="Number"
-                                        className="input input-bordered text-black"
+                                        className="input input-bordered "
                                         inputMode="numeric"
                                         pattern="[0-9]{11}"
                                         required
                                     />
                                 </div>
                                 <div className="form-control mb-5 dm:mb-0">
-                                    <input type="email" name="email" placeholder="Email" className="input input-bordered text-black" required />
+                                    <input type="email" name="email" placeholder="Email" className="input input-bordered " required />
                                 </div>
                                 <div className="form-control mb-5 dm:mb-0">
-                                    <input type="text" name="subject" placeholder="Subject" className="input input-bordered text-black" required />
+                                    <input type="text" name="subject" placeholder="Subject" className="input input-bordered " required />
                                 </div>
                                 <div className="form-control col-span-2 row-span-2 mb-5 dm:mb-0">
-                                    <input type="text" name="massage" placeholder="Massage" className="input input-bordered h-28 text-black" required />
+                                    <input type="text" name="massage" placeholder="Massage" className="input input-bordered h-28 " required />
                                 </div>
                             </div>
 

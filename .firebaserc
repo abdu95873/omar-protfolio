@@ -1,5 +1,7 @@
 {
   "projects": {
     "default": "omar-client"
-  }
+  },
+  "targets": {},
+  "etags": {}
 }

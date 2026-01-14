@@ -6,7 +6,7 @@ const ReviewsSection = () => {
 
     // Fetch all reviews from backend
     const fetchReviews = () => {
-        fetch('http://localhost:5000/reviewSection')
+        fetch('https://omar-server-side.vercel.app/reviewSection')
             .then(res => res.json())
             .then(data => setReviews(data))
             .catch(err => console.error('Error fetching reviews:', err));
@@ -26,7 +26,7 @@ const ReviewsSection = () => {
 
         const body = { review, name, designation };
 
-        fetch('http://localhost:5000/reviewSection', {
+        fetch('https://omar-server-side.vercel.app/reviewSection', {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(body),
@@ -51,7 +51,7 @@ const ReviewsSection = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/reviewSection/${id}`, {
+                fetch(`https://omar-server-side.vercel.app/reviewSection/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())

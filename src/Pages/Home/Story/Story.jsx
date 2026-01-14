@@ -3,71 +3,62 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Story = () => {
+  const [storyData, setStoryData] = useState(null);
 
+  useEffect(() => {
+    axios.get('https://omar-server-side.vercel.app/storySection')
+      .then(response => {
+        if (response.data.length > 0) {
+          setStoryData(response.data[0]);
+        } else {
+          console.error('No story data found.');
+        }
+      })
+      .catch(error => {
+        console.error('Error fetching data:', error);
+      });
+  }, []);
 
-    const [imageData, setImageData] = useState(null);
-    const [textOneData, setTextOneData] = useState(null);
-    const [textTwoData, setTextTwoData] = useState(null);
-    const [nameData, setNameData] = useState(null);
-    const [designationData, setDesignationData] = useState(null);
+  if (!storyData) return <p className="text-center py-20">Loading...</p>;
 
-    useEffect(() => {
-        axios.get('http://localhost:5000/storySection')
-            .then(response => {
-                console.log('Response:', response.data);
-                if (response.data.length > 0) {
-                    setImageData(response.data[0].image);
-                    setTextOneData(response.data[0].textOne);
-                    setTextTwoData(response.data[0].textTwo);
-                    setNameData(response.data[0].name);
-                    setDesignationData(response.data[0].designation);
-                } else {
-                    console.error('No youtube url found.');
-                }
-            })
-            .catch(error => {
-                console.error('Error fetching data:', error);
-            });
-    }, []);
-
-    return (
-        <div className='pb-24 md:py-24 my-24 md:mx-72'>
-            <div className='grid grid-cols-1 md:grid-cols-2 gap-16' >
-                
-                <div className=' pt-14 md:py-32 mx-10'>
-                    <div >
-                        <h3 className='text-2xl font-bold text-orange-400'>STORY</h3>
-                        <p className='text-6xl' style={{ fontFamily: '"Times New Roman", Times, serif' }}>FEATURED PROJECT</p>
-                    </div>
-                    <br />
-                    <div className='pt-20'>
-                        {textOneData}
-                        <br /><br />
-                        {textTwoData}
-                        <br /><br />
-                        <p className='text-xl text-orange-400'>{nameData}</p>
-                        <p className='text-xl'>{designationData}</p>
-                    </div>
-                </div>
-
-                <div>
-                   <div className="flex justify-center" style={{ height: '50rem' }}>
-            <div className="flex justify-center" style={{ height: '50rem' }}>
-  <img 
-    src={imageData} 
-    alt="img" 
-    className="w-auto h-full rounded-tr-3xl rounded-bl-3xl shadow-lg object-cover"
-  />
-</div>
-                </div>
-
-                </div>
+  return (
+  <div className='mx-10 pb-20 md:py-20 md:mx-72 '>      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+        {/* Left Content */}
+        <div className="space-y-6 md:space-y-10">
+          <div>
+            <h3 className="text-xl md:text-2xl font-bold text-orange-400 tracking-wide">STORY</h3>
+            <p className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mt-2">
+              FEATURED PROJECT
+            </p>
+          </div>
+          <div className="space-y-4 text-gray-700 md:text-lg">
+            <p>{storyData.textOne}</p>
+            <p>{storyData.textTwo}</p>
+            <div className="mt-4">
+              <p className="text-xl font-semibold text-orange-400">{storyData.name}</p>
+              <p className="text-lg">{storyData.designation}</p>
             </div>
-            <Link className="text-slate-300 flex justify-end mt-20" to="/allStory">
-                    <button className="text-lg hover:text-orange-400">See More</button>
-                </Link>
+          </div>
+          <Link to="/allStory" className="inline-block mt-6">
+            <button className="text-lg text-slate-300 hover:text-orange-400 transition-colors duration-300">
+              See More
+            </button>
+          </Link>
         </div>
-    );
+
+        {/* Right Image */}
+        <div className="flex justify-center md:justify-end">
+          <div className="w-full max-w-md md:max-w-lg lg:max-w-xl h-96 md:h-[50rem]">
+            <img
+              src={storyData.image}
+              alt={storyData.name}
+              className="w-full h-full object-cover rounded-tr-3xl rounded-bl-3xl shadow-lg"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Story;

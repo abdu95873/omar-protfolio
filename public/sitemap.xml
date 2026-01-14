@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+  <url>
+    <loc>https://filmbyomar.com/</loc>
+    <priority>1.0</priority>
+  </url>
+
+  <url><loc>https://filmbyomar.com/about</loc></url>
+  <url><loc>https://filmbyomar.com/allVideos</loc></url>
+  <url><loc>https://filmbyomar.com/protfolio</loc></url>
+  <url><loc>https://filmbyomar.com/story</loc></url>
+  <url><loc>https://filmbyomar.com/allStory</loc></url>
+  <url><loc>https://filmbyomar.com/reviews</loc></url>
+  <url><loc>https://filmbyomar.com/allReviews</loc></url>
+  <url><loc>https://filmbyomar.com/contact</loc></url>
+  <url><loc>https://filmbyomar.com/blog</loc></url>
+  <url><loc>https://filmbyomar.com/allBlogs</loc></url>
+  <url><loc>https://filmbyomar.com/socialMedia</loc></url>
+  <url><loc>https://filmbyomar.com/gallery</loc></url>
+
+</urlset>

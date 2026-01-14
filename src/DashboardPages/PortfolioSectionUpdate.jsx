@@ -48,7 +48,7 @@ const PortfolioSectionUpdate = () => {
             const imageUrl = { image: imgData.data.url };
 
             // Update backend
-            await fetch(`http://localhost:5000/portfolioImage/${loadedUrl._id}`, {
+            await fetch(`https://omar-server-side.vercel.app/portfolioImage/${loadedUrl._id}`, {
                 method: "PUT",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(imageUrl),

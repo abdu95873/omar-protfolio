@@ -7,7 +7,7 @@ const Blog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await fetch("http://localhost:5000/blogSection");
+        const res = await fetch("https://omar-server-side.vercel.app/blogSection");
         const data = await res.json();
         setLoadData(data);
       } catch (err) {
@@ -35,7 +35,7 @@ const Blog = () => {
 >
 
               {/* CARD CONTENT */}
-              <div className="w-full h-full p-10 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+              <div className="w-full h-full p-10 grid grid-cols-2 gap-10 items-center">
 
                 {/* LEFT SIDE — text */}
                 <div className="space-y-6">

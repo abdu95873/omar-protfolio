@@ -18,7 +18,7 @@ const GallerySection = () => {
     }, [loadedData.images]);
 
     useEffect(() => {
-        axios.get('http://localhost:5000/gallerySection')
+        axios.get('https://omar-server-side.vercel.app/gallerySection')
             .then(res => {
                 if (Array.isArray(res.data)) setGallery(res.data);
             })
@@ -53,7 +53,7 @@ const GallerySection = () => {
 
         const imageUrls = await Promise.all(promises);
 
-        axios.post(`http://localhost:5000/gallerySection`, { images: imageUrls, category: selectedCategory })
+        axios.post(`https://omar-server-side.vercel.app/gallerySection`, { images: imageUrls, category: selectedCategory })
             .then(() => {
                 setGallery(prev => [...imageUrls.map(url => ({ imageUrl: url, _id: Date.now() })), ...prev]);
                 setNewImageSelected(false);
@@ -78,7 +78,7 @@ const GallerySection = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then(result => {
             if (result.isConfirmed) {
-                axios.delete(`http://localhost:5000/gallerySection/${id}`)
+                axios.delete(`https://omar-server-side.vercel.app/gallerySection/${id}`)
                     .then(() => {
                         setGallery(prev => prev.filter(item => item._id !== id));
                         Swal.fire('Deleted!', 'Image has been deleted.', 'success');

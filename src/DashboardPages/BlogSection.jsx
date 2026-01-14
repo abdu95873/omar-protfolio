@@ -24,7 +24,7 @@ const BlogSection = () => {
       if (!data.data) return console.error('Error uploading image:', data);
       const imageUrl = data.data.url;
 
-      return fetch(`http://localhost:5000/blogSection`, {
+      return fetch(`https://omar-server-side.vercel.app/blogSection`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ title, details, image: imageUrl }),

@@ -37,7 +37,7 @@ const AboutSection = () => {
     const embedUrl = convertToEmbed(newVideo.url);
 
     try {
-      const res = await fetch('http://localhost:5000/about', {
+      const res = await fetch('https://omar-server-side.vercel.app/about', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...newVideo, url: embedUrl }),
@@ -67,7 +67,7 @@ const AboutSection = () => {
 
     if (confirm.isConfirmed) {
       try {
-        const res = await fetch(`http://localhost:5000/about/${id}`, {
+        const res = await fetch(`https://omar-server-side.vercel.app/about/${id}`, {
           method: 'DELETE',
         });
         const data = await res.json();

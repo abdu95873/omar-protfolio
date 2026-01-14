@@ -15,7 +15,7 @@ const BlogSectionUpdate = () => {
 
     const updateBlog = (imageUrl = loadedUrl.image) => {
       const body = { title, details, image: imageUrl };
-      fetch(`http://localhost:5000/blogSection/${loadedUrl._id}`, {
+      fetch(`https://omar-server-side.vercel.app/blogSection/${loadedUrl._id}`, {
         method: "PATCH",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),

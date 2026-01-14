@@ -7,7 +7,7 @@ const AllAbout = () => {
 
   useEffect(() => {
     axios
-      .get('http://localhost:5000/about')
+      .get('https://omar-server-side.vercel.app/about')
       .then((response) => {
         setAboutData(response.data || []);
       })

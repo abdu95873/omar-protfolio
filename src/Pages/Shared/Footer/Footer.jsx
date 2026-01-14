@@ -32,10 +32,10 @@ const Footer = () => {
             <div>
               <h2 className="mb-4 text-sm font-semibold uppercase text-orange-400 font-poppins">Follow Us</h2>
               <ul className="space-y-2 text-gray-400 font-roboto">
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Facebook</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">Instagram</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">TikTok</a></li>
-                <li><a href="#" className="hover:text-orange-400 transition-colors">YouTube</a></li>
+                <li><a href="https://www.facebook.com/mohammad.omar.602590" className="hover:text-orange-400 transition-colors">Facebook</a></li>
+                <li><a href="https://www.instagram.com/explorewith0mar?igsh=c3RjeGV4a3NoN25o" className="hover:text-orange-400 transition-colors">Instagram</a></li>
+                {/* <li><a href="#" className="hover:text-orange-400 transition-colors">TikTok</a></li> */}
+                <li><a href="https://www.youtube.com/@explorewithomar" className="hover:text-orange-400 transition-colors">YouTube</a></li>
               </ul>
             </div>
 
@@ -50,13 +50,21 @@ const Footer = () => {
           </div>
         </div>
 
+
         <hr className="border-gray-700 my-6" />
 
         {/* Bottom Section */}
         <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
           <span className="text-sm sm:text-left text-gray-400 font-roboto">
-            OMAR © 2024 - Developed & Maintained by <a href="https://www.linkedin.com/in/abdullah958/" className="hover:text-orange-400 transition-colors">ABDULLAH</a>
-          </span>
+  OMAR © 2024 - Developed & Maintained by&nbsp;
+  <a
+    href="https://www.linkedin.com/in/abdullah958/"
+    className="hover:text-orange-400 transition-colors"
+  >
+    ABDULLAH
+  </a>
+</span>
+
 
           <div className="flex mt-4 sm:mt-0 space-x-4">
             <a href="#" className="text-gray-400 hover:text-orange-400 transition-colors" aria-label="Facebook">

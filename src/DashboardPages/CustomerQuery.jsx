@@ -10,7 +10,7 @@ const CustomerQuery = () => {
   }, []);
 
   const fetchCustomerInfo = () => {
-    axios.get('http://localhost:5000/customerInfo')
+    axios.get('https://omar-server-side.vercel.app/customerInfo')
       .then(response => {
         const sortedData = response.data.sort((a, b) => b.name.localeCompare(a.name));
         setCustomerInfo(sortedData);
@@ -27,7 +27,7 @@ const handleStatesToggle = (_id) => {
   );
 
   // Send patch request
-  axios.patch(`http://localhost:5000/customerInfo/${_id}`, { states: 'read' })
+  axios.patch(`https://omar-server-side.vercel.app/customerInfo/${_id}`, { states: 'read' })
     .then(() => {
       Swal.fire({
         position: 'top-end',
