@@ -35,7 +35,7 @@ const BrandLoader = ({ onFinish }) => {
     className="flex items-center gap-4"
   >
     <img src={logo} className="h-20" />   {/* bigger logo */}
-    <img src={omar} className="h-16" />   {/* bigger text/logo */}
+    <img src={omar} className="h-20" />   {/* bigger text/logo */}
   </motion.div>
 )}
 

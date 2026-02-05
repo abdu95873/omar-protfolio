@@ -42,21 +42,22 @@ const AllStory = () => {
             <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl"></div>
           </div>
 
-          {/* Glass-like Text Block */}
-          <div className="lg:w-1/2 w-full p-10 flex flex-col justify-center rounded-b-3xl lg:rounded-r-3xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-inner transition-transform duration-500 hover:scale-105">
-            <p className="text-lg mb-2 italic text-white lg:text-black">
-              {data.textOne}
-            </p>
-            <p className="text-base mb-4 text-white/80 lg:text-gray-700">
-              {data.textTwo}
-            </p>
-            <p className="text-3xl font-extrabold text-orange-400">
-              {data.name}
-            </p>
-            <p className="text-lg font-semibold text-white lg:text-gray-600">
-              {data.designation}
-            </p>
-          </div>
+         {/* Glass-like Text Block */}
+            <div className="lg:w-1/2 w-full p-10 flex flex-col justify-center rounded-b-3xl lg:rounded-r-3xl bg-white/20 backdrop-blur-lg border border-white/30 shadow-inner transition-transform duration-500 hover:scale-105">
+              <p className="text-lg mb-2 italic text-white lg:text-black whitespace-pre-line">
+                {data.textOne}
+              </p>
+              <p className="text-base mb-2 text-white/80 lg:text-gray-700 whitespace-pre-line">
+                {data.textTwo}
+              </p>
+              <p className="text-3xl font-extrabold text-orange-400 mt-20">
+                {data.name}
+              </p>
+              <p className="text-lg italic font-semibold text-white lg:text-gray-500">
+                {data.designation}
+              </p>
+            </div>
+
         </motion.div>
       ))}
     </div>

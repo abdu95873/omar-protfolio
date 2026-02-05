@@ -23,7 +23,7 @@ const AllBlogs = () => {
       {loadData.map((data) => (
         <div
           key={data._id}
-          className=" shadow-lg rounded-lg hover:shadow-2xl transition-shadow duration-300"
+          className=" shadow-lg rounded-lg bg-slate-50 hover:shadow-2xl transition-shadow duration-300"
         >
           <div className="hero-content flex-col lg:flex-row gap-6">
             
@@ -43,7 +43,7 @@ const AllBlogs = () => {
                   {data.title}
                 </h2>
               </Link>
-              <p className="text-gray-700">{data.details}</p>
+              <p className="text-gray-700 text-lg">{data.details}</p>
             </div>
 
           </div>

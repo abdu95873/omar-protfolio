@@ -2,7 +2,7 @@ import { FaFacebook, FaYoutube, FaInstagram } from "react-icons/fa";
 
 const SocialMedia = () => {
   return (
-    <div className="py-10">
+    <div className="py-20">
       <div className="h-1"></div>
 
       <div className="w-full flex flex-col justify-center" id="bgImage">
@@ -18,7 +18,7 @@ const SocialMedia = () => {
           </p>
         </div>
 
-        <div className="flex gap-5 justify-center py-5">
+        <div className="flex gap-5 justify-center  mt-10">
           <a
             href="https://www.facebook.com/mohammad.omar.602590"
             target="_blank"

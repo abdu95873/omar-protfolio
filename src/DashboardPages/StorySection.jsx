@@ -164,10 +164,12 @@ const StorySection = () => {
                         </div>
 
                         <div className="p-4 flex flex-col gap-2 flex-grow">
-                            <h2 className="py-5 text-lg font-bold text-gray-800">{loadInfo.textOne}</h2>
-                            <p className="pb-5 text-gray-700">{loadInfo.textTwo}</p>
+                        <h2 className="py-5 text-lg font-bold text-gray-800 whitespace-pre-line">{loadInfo.textOne}</h2>
+
+                          <p className="pb-5 text-gray-700 whitespace-pre-line">{loadInfo.textTwo}</p>
+
                             <p className="text-2xl text-orange-400 font-semibold">{loadInfo.name}</p>
-                            <p className="text-gray-600">{loadInfo.designation}</p>
+                            <p className="text-gray-500 italic">{loadInfo.designation}</p>
                         </div>
 
                         {/* Update & Delete Buttons */}

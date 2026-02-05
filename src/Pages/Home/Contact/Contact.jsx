@@ -39,7 +39,7 @@ const Contact = () => {
 
     return (
         <div className='md:mx-72 '>
-            <div className="py-20 mg-20">
+            <div className="pb-20 mb-10">
                 <div className="grid grid-cols-1 md:grid-cols-2">
                     
                     {/* Form Card */}
@@ -91,17 +91,14 @@ const Contact = () => {
                     </div>
 
                     {/* Info / Description */}
-                    <div className='mx-10 my-10 hidden sm:block'>
+                    <div className='mx-10  hidden sm:block my-auto'>
                         <h3 className='mb-2 text-2xl text-black'>CONTACT</h3>
                         <p className='text-6xl text-black'>REQUEST CALL BACK</p>
                         <br />
-                        <p className='text-black'>
-                            Nulla facilisi. Praesent non mauris ac ligula ullamcorper vehicula. 
-                            Praesent mollis, nibh in venenatis iaculis, mauris eros iaculis quam, 
-                            ut aliquam nisi nunc vitae quam. Fusce faucibus, felis at fermentum convallis, 
-                            nunc neque aliquam turpis, ut varius ipsum nisi eu magna. Sed euismod laoreet nisi, 
-                            eu iaculis elit scelerisque non.
-                        </p>
+                        <p className="text-gray-700 text-2xl mb-6 leading-relaxed ">
+    Need assistance or have a question? Fill out the form or leave your details, and our team will 
+    get back to you promptly. We’re here to help and ensure your experience is smooth and professional.
+  </p>
                     </div>
                 </div>
             </div>

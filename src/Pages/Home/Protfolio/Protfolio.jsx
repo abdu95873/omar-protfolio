@@ -25,7 +25,7 @@ const Portfolio = () => {
                 <p className='text-6xl ' style={{ fontFamily: '"Times New Roman", Times, serif' }}>WHAT THEY SAY ABOUT OUR STUDIO ? </p>
             </div>
 
-            <Marquee className="text-slate-50 w-full" direction="right" speed={10}>
+            <Marquee className="text-slate-200  w-full" direction="right" speed={10}>
                 <div className="flex flex-row space-x-10 px-5">
 
 

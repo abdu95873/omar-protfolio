@@ -36,7 +36,7 @@ const Reviews = () => {
                                 <div className='flex justify-between'>
                                     <div>
                                         <p className='text-xl font-bold text-orange-400'>{data.name}</p>
-                                        <p className='text-xl'>{data.designation}</p>
+                                        <p className='text-lg italic text-gray-500'>{data.designation}</p>
                                     </div>
                                     <div className='items-center'>
                                         <FaQuoteRight />

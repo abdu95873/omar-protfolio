@@ -12,6 +12,10 @@ export default {
         'custom-black-3': '#181414', // Custom color
 
       },
+      fontFamily: {
+        poppins: ['Poppins', 'sans-serif'],
+        quick: ['Quicksand', 'sans-serif'],
+      },
     },
   },
   plugins: [

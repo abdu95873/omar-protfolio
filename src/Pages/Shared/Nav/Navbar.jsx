@@ -44,10 +44,15 @@ function Navbar() {
         <div className="flex items-center justify-between h-16">
 
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 sm:gap-3">
-            <img src={logo} alt="Logo" className="h-8 sm:h-10" />
-            <h1 className="text-lg sm:text-xl font-bold">OMAR</h1>
-          </Link>
+       <Link to="/" className="flex items-center gap-2 sm:gap-3">
+  <img src={logo} alt="Logo" className="h-8 sm:h-10" />
+
+  <h1 className="font-quick text-xl sm:text-4xl font-semibold tracking-[0.2em] text-orange-400">
+    OMAR
+  </h1>
+</Link>
+
+
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center gap-6 lg:gap-8">

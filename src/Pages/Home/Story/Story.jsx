@@ -19,31 +19,35 @@ const Story = () => {
       });
   }, []);
 
-  if (!storyData) return <p className="text-center py-20">Loading...</p>;
+  if (!storyData) return <p className="text-center py-20 text-gray-500">Loading...</p>;
 
   return (
-  <div className='mx-10 pb-20 md:py-20 md:mx-72 '>      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+    <div className="mx-6 md:mx-72 pb-20 md:py-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+
         {/* Left Content */}
         <div className="space-y-6 md:space-y-10">
+          {/* Headings */}
           <div>
-            <h3 className="text-xl md:text-2xl font-bold text-orange-400 tracking-wide">STORY</h3>
-            <p className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mt-2">
+            <h3 className="text-sm md:text-base font-semibold text-orange-400 tracking-widest uppercase">
+              STORY
+            </h3>
+            <h2 className="text-3xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mt-2 text-gray-900">
               FEATURED PROJECT
-            </p>
+            </h2>
           </div>
-          <div className="space-y-4 text-gray-700 md:text-lg">
-            <p>{storyData.textOne}</p>
-            <p>{storyData.textTwo}</p>
-            <div className="mt-4">
-              <p className="text-xl font-semibold text-orange-400">{storyData.name}</p>
-              <p className="text-lg">{storyData.designation}</p>
+
+          {/* Story Text */}
+          <div className="space-y-6 text-gray-700 md:text-base">
+            <p className="font-semibold text-xl md:text-2xl leading-relaxed">{storyData.textOne}</p>
+            <p className="leading-relaxed text-xl">{storyData.textTwo}</p>
+
+            {/* Author Info */}
+            <div className="mt-6">
+              <p className="text-lg md:text-xl font-semibold text-orange-400">{storyData.name}</p>
+              <p className="text-sm md:text-base italic text-gray-600">{storyData.designation}</p>
             </div>
           </div>
-          <Link to="/allStory" className="inline-block mt-6">
-            <button className="text-lg text-slate-300 hover:text-orange-400 transition-colors duration-300">
-              See More
-            </button>
-          </Link>
         </div>
 
         {/* Right Image */}
@@ -56,6 +60,15 @@ const Story = () => {
             />
           </div>
         </div>
+      </div>
+
+      {/* See More Button */}
+      <div className="flex justify-end mt-6">
+        <Link to="/allStory">
+          <button className="text-lg text-slate-400 hover:text-orange-400 transition-colors duration-300">
+            See More
+          </button>
+        </Link>
       </div>
     </div>
   );

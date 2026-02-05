@@ -13,37 +13,50 @@ const Services = () => {
                 <p className='text-6xl ' style={{ fontFamily: '"Times New Roman", Times, serif' }}>WHAT THEY SAY ABOUT OUR STUDIO ? </p>
             </div>
 
-            <div className='md:flex  gap-10 mx-10 my-10 pt-20 z-0'>
+            <div className="md:flex flex-wrap gap-10 mx-10 my-10 pt-20 z-0 justify-center">
 
-                <div className='flex items-center justify-center gap-5 mb-10'>
-                <img className='w-24' src={clapperboard} alt="" />
-                    <div className='ml-4'>
-                        <h5>FILM PRODUCTION</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, veniam.</p>
-                    </div>
-                </div>
-                <div className='flex items-center justify-center gap-5 mb-10'>
-                    <img className='w-24' src={camera} alt="" />
-                    <div className='ml-4 mx-20'>
-                        <h5>FILM PRODUCTION</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, veniam.</p>
-                    </div>
-                </div>
-                <div className='flex items-center justify-center gap-5 mb-10'>
-                    <img className='w-24' src={music} alt="" />
-                    <div className='ml-4'>
-                        <h5>FILM PRODUCTION</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, veniam.</p>
-                    </div>
-                </div>
-                <div className='flex items-center justify-center gap-5 mb-10'>
-                    <img className='w-24' src={film} alt="" />
-                    <div className='ml-4'>
-                        <h5>FILM PRODUCTION</h5>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ratione, veniam.</p>
-                    </div>
-                </div>
-            </div>
+  <div className="flex items-start gap-5 mb-10 max-w-sm">
+    <img className="w-24 my-auto" src={clapperboard} alt="Film Production" />
+    <div>
+      <h5 className="text-xl font-semibold mb-2">FILM PRODUCTION</h5>
+      <p className="text-gray-600 text-xl">
+        We produce high-quality films with attention to detail and creativity.
+      </p>
+    </div>
+  </div>
+
+  <div className="flex items-start gap-5 mb-10 max-w-sm">
+    <img className="w-24 my-auto" src={camera} alt="Photography" />
+    <div>
+      <h5 className="text-xl font-semibold mb-2">PHOTOGRAPHY</h5>
+      <p className="text-gray-600 text-xl">
+        Capturing stunning moments with professional cameras and techniques.
+      </p>
+    </div>
+  </div>
+
+  <div className="flex items-start gap-5 mb-10 max-w-sm">
+    <img className="w-24 my-auto" src={music} alt="Music Production" />
+    <div>
+      <h5 className="text-xl font-semibold mb-2">MUSIC PRODUCTION</h5>
+      <p className="text-gray-600 text-xl">
+        Composing and producing music tracks that leave a lasting impact.
+      </p>
+    </div>
+  </div>
+
+  <div className="flex items-start gap-5 mb-10 max-w-sm">
+    <img className="w-24 my-auto" src={film} alt="Video Editing" />
+    <div>
+      <h5 className="text-xl font-semibold mb-2">VIDEO EDITING</h5>
+      <p className="text-gray-600 text-xl">
+        Editing videos with professional tools to create visually stunning results.
+      </p>
+    </div>
+  </div>
+
+</div>
+
 
 
         </div>

@@ -41,11 +41,11 @@ const Blog = () => {
                 <div className="space-y-6">
                   <p className="italic text-gray-500">BLOG</p>
                   <h2 className="text-4xl font-bold text-black">{blog.title}</h2>
-                  <p className="text-gray-700 max-w-md line-clamp-4">{blog.details}</p>
+                  <p className="text-gray-700 text-xl max-w-md line-clamp-4">{blog.details}</p>
 
                   <Link
                     to={`/singleBlog/${blog._id}`}
-                    className="mt-4 inline-block text-orange-400 font-semibold hover:underline"
+                    className="mt-4 inline-block text-orange-400 text-lg font-semibold hover:underline"
                   >
                     Read More →
                   </Link>
