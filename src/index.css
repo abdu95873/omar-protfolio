@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary: #fb923c;
+  --white: #ffffff;
+  --bg: #fafafa;
+  --ease-smooth: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html {
+  font-size: 100%;
+  scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: auto;
+}
+
+/* Lenis smooth scroll — single scrollbar */
+html.lenis {
+  scroll-behavior: auto !important;
+}
+
+html.lenis #root,
+html.lenis #root > * {
+  overflow-y: visible !important;
+}
+
+#root {
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* পুরো সাইটের scrollbar — স্বাভাবিক */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 10px;
+}
+
+html::-webkit-scrollbar-thumb,
+body::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: #a3a3a3;
+}
+
+html::-webkit-scrollbar-thumb:hover,
+body::-webkit-scrollbar-thumb:hover {
+  background: #525252;
+}
+
+html::-webkit-scrollbar-track,
+body::-webkit-scrollbar-track {
+  background: #f5f5f5;
+}
+
+/* শুধু নির্দিষ্ট section — horizontal scrollbar/scroll নেই */
+.section-no-scrollbar {
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  max-width: 100%;
+  width: 100%;
+}
+
+.marquee-viewport,
+.marquee-clip {
+  overflow: hidden !important;
+  overflow-x: hidden !important;
+  max-width: 100% !important;
+  width: 100% !important;
+  position: relative;
+  touch-action: pan-y;
+  overscroll-behavior-x: none;
+  -webkit-overflow-scrolling: auto;
+}
+
+.marquee-viewport::-webkit-scrollbar,
+.marquee-clip::-webkit-scrollbar,
+.section-no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.marquee-viewport .animate-marquee {
+  pointer-events: auto;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee-scroll linear infinite;
+  will-change: transform;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
+    flex-wrap: wrap;
+    width: 100% !important;
+    justify-content: center;
+  }
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: clip;
+  overflow-y: visible;
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  font-family: 'Poppins', system-ui, sans-serif;
+  color: #171717;
+  background-color: #fafafa;
+  background-image: radial-gradient(rgba(0, 0, 0, 0.04) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 1024px) {
+  body {
+    font-size: 1.125rem;
+  }
+}
+
+@layer components {
+  .section-shell {
+    @apply w-full max-w-[1920px] mx-auto
+      px-5 sm:px-8 md:px-10 lg:px-14 xl:px-16 2xl:px-20
+      py-12 sm:py-16 md:py-20 lg:py-28;
+  }
+
+  .section-card {
+    @apply rounded-2xl sm:rounded-3xl bg-white/90 backdrop-blur-sm
+      border border-gray-100 shadow-soft
+      p-6 sm:p-8 md:p-10 lg:p-14;
+  }
+
+  .text-body {
+    @apply text-base sm:text-lg lg:text-xl text-gray-600 leading-relaxed;
+  }
+
+  .text-lead {
+    @apply text-lg sm:text-xl lg:text-2xl text-gray-700 leading-relaxed font-medium;
+  }
+
+  .card-hover {
+    @apply transition-all duration-300 ease-smooth hover:-translate-y-1 hover:shadow-soft;
+  }
+
+  .btn-brand {
+    @apply inline-flex items-center justify-center rounded-full bg-orange-400
+      px-8 py-3.5 text-base sm:text-lg lg:px-10 lg:py-4 lg:text-xl
+      text-white font-semibold
+      transition-all duration-300 ease-smooth hover:bg-orange-500 hover:shadow-glow hover:scale-[1.02]
+      active:scale-[0.98] w-full sm:w-auto;
+  }
+
+  .glass-nav {
+    @apply bg-white/85 backdrop-blur-lg border-b border-neutral-200/90 shadow-[0_1px_0_rgba(0,0,0,0.04),0_8px_24px_-12px_rgba(0,0,0,0.08)];
+  }
+
+  /* Page area = at least one full screen below navbar; footer comes after */
+  .page-main {
+    @apply flex-1 flex flex-col w-full
+      min-h-[calc(100dvh-4rem)] lg:min-h-[calc(100dvh-4.25rem)];
+  }
+
+  .input-smooth {
+    @apply text-base lg:text-lg transition-all duration-300 focus:ring-2 focus:ring-orange-300 focus:border-orange-400;
+  }
+}
+
+.label-text {
+  color: #ffffff;
+}
