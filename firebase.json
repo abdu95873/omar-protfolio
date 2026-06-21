@@ -1,5 +1,6 @@
 {
   "hosting": {
+    "site": "omar-client",
     "public": "dist",
     "ignore": [
       "firebase.json",

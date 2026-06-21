@@ -4,7 +4,7 @@ import SectionReveal from '../../../components/motion/SectionReveal';
 
 const socials = [
   { href: "https://www.facebook.com/mohammad.omar.602590", Icon: FaFacebook, hover: "hover:text-blue-600" },
-  { href: "https://www.instagram.com/explorewith0mar?igsh=c3RjeGV4a3NoN25o", Icon: FaInstagram, hover: "hover:text-pink-500" },
+  { href: "https://www.instagram.com/filmby0mar", Icon: FaInstagram, hover: "hover:text-pink-500" },
   { href: "https://www.youtube.com/@explorewithomar", Icon: FaYoutube, hover: "hover:text-red-600" },
 ];
 
@@ -24,7 +24,7 @@ const SocialMedia = () => {
             HAVE AN IDEA IN YOUR MIND? START YOUR PROJECT WITH US
           </h2>
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl font-medium text-orange-400 break-words px-2">
-            <a href="tel:+8801882270941" className="hover:underline">+880 18822 70941</a>
+            <a href="tel:+8801882270941" className="hover:underline">+357 96 630110</a>
             <span className="hidden sm:inline"> · </span>
             <span className="block sm:inline mt-1 sm:mt-0">
               <a href="mailto:mohammadomar2787@gmail.com" className="hover:underline text-sm sm:text-inherit">mohammadomar2787@gmail.com</a>

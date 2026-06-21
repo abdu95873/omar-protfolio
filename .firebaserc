@@ -3,5 +3,6 @@
     "default": "omar-client"
   },
   "targets": {},
-  "etags": {}
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
 }
