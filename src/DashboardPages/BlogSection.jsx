@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link, useLoaderData } from "react-router-dom";
 import downArrow from '../assets/44969.png';
+import DashboardPageHeader from '../components/dashboard/DashboardPageHeader';
 
 const BlogSection = () => {
   const [previewUrl, setPreviewUrl] = useState('');
@@ -49,12 +50,15 @@ const BlogSection = () => {
   };
 
   return (
-    <div className="px-6 md:px-20 py-10 bg-gray-50 min-h-screen">
-      
-      {/* Add Blog Form */}
-      <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl p-8 md:p-12 mb-12">
-        <h2 className="text-3xl font-bold text-orange-500 mb-6 text-center">Add New Blog</h2>
-        
+    <div>
+      <DashboardPageHeader
+        label="Content"
+        title="Blog"
+        subtitle="Add posts and manage existing articles."
+      />
+
+      <div className="dashboard-panel mx-auto mb-10 max-w-3xl p-6 md:p-10">
+        <h2 className="font-serif mb-6 text-2xl text-neutral-900">Add new blog</h2>
         {previewUrl && (
           <div className="mb-6">
             <img src={previewUrl} alt="Preview" className="w-full h-72 object-cover rounded-2xl shadow-md" />
@@ -87,20 +91,19 @@ const BlogSection = () => {
             <textarea name="details" placeholder="Blog Details" className="textarea textarea-bordered w-full" rows={4} required />
           </div>
 
-          <button type="submit" className="btn btn-primary w-full text-lg">Add Blog</button>
+          <button type="submit" className="btn-brand w-full">Add blog</button>
         </form>
       </div>
 
-      {/* Blog List */}
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
         {loadInfos.map(blog => (
-          <div key={blog._id} className="bg-white rounded-3xl shadow-lg overflow-hidden hover:shadow-2xl transition-shadow duration-300">
-            <img src={blog.image} alt={blog.title} className="w-full h-64 object-cover" />
-            <div className="p-6">
-              <h3 className="text-2xl font-bold text-orange-500 mb-2 line-clamp-2">{blog.title}</h3>
-              <p className="text-gray-700 text-base mb-4 line-clamp-3">{blog.details}</p>
+          <div key={blog._id} className="dashboard-panel overflow-hidden">
+            <img src={blog.image} alt={blog.title} className="h-56 w-full object-cover" />
+            <div className="p-5">
+              <h3 className="font-serif mb-2 line-clamp-2 text-xl text-neutral-900">{blog.title}</h3>
+              <p className="mb-4 line-clamp-3 text-sm text-neutral-600">{blog.details}</p>
               <Link to={`/dashboard/blogSectionUpdate/${blog._id}`}>
-                <button className="btn btn-outline btn-primary w-full">Update</button>
+                <button type="button" className="btn btn-sm btn-outline w-full border-orange-300 text-orange-600 hover:bg-orange-50">Update</button>
               </Link>
             </div>
           </div>

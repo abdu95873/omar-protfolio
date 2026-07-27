@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import Swal from 'sweetalert2';
+import { useEffect, useState } from "react";
+import axios from "axios";
+import Swal from "sweetalert2";
+import DashboardPageHeader from "../components/dashboard/DashboardPageHeader";
 
 const CustomerQuery = () => {
   const [customerInfo, setCustomerInfo] = useState([]);
@@ -10,83 +11,109 @@ const CustomerQuery = () => {
   }, []);
 
   const fetchCustomerInfo = () => {
-    axios.get('https://omar-server-side.vercel.app/customerInfo')
-      .then(response => {
+    axios
+      .get("https://omar-server-side.vercel.app/customerInfo")
+      .then((response) => {
         const sortedData = response.data.sort((a, b) => b.name.localeCompare(a.name));
         setCustomerInfo(sortedData);
       })
-      .catch(error => console.error('Error fetching data:', error));
+      .catch((error) => console.error("Error fetching data:", error));
   };
 
-const handleStatesToggle = (_id) => {
-  // Update local state immediately
-  setCustomerInfo(prev =>
-    prev.map(customer =>
-      customer._id === _id ? { ...customer, states: 'read' } : customer
-    )
-  );
+  const handleStatesToggle = (_id) => {
+    setCustomerInfo((prev) =>
+      prev.map((customer) =>
+        customer._id === _id ? { ...customer, states: "read" } : customer
+      )
+    );
 
-  // Send patch request
-  axios.patch(`https://omar-server-side.vercel.app/customerInfo/${_id}`, { states: 'read' })
-    .then(() => {
-      Swal.fire({
-        position: 'top-end',
-        icon: 'success',
-        title: 'Marked as Read',
-        showConfirmButton: false,
-        timer: 1500
-      });
-    })
-    .catch(error => console.error('Error updating states:', error));
-};
+    axios
+      .patch(`https://omar-server-side.vercel.app/customerInfo/${_id}`, { states: "read" })
+      .then(() => {
+        Swal.fire({
+          position: "top-end",
+          icon: "success",
+          title: "Marked as Read",
+          showConfirmButton: false,
+          timer: 1500,
+        });
+      })
+      .catch((error) => console.error("Error updating states:", error));
+  };
 
+  const unreadCount = customerInfo.filter((c) => c.states === "unread").length;
 
   return (
-    <div className="p-6 md:p-10 bg-gray-50 min-h-screen font-sans">
-      <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-12 text-orange-500 tracking-wide">
-        Customer Queries
-      </h2>
+    <div>
+      <DashboardPageHeader
+        label="Inbox"
+        title="Customer queries"
+        subtitle="Messages from the contact form on your site."
+        action={
+          unreadCount > 0 ? (
+            <span className="rounded-full bg-orange-100 px-3 py-1 text-sm font-medium text-orange-700">
+              {unreadCount} unread
+            </span>
+          ) : null
+        }
+      />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-        {customerInfo.map((customer) => (
-          <div
-            key={customer._id}
-            className={`flex flex-col p-6 rounded-3xl shadow-md transition-transform duration-300 hover:scale-105
-              ${customer.states === 'unread' ? 'bg-gradient-to-r from-cyan-100 to-cyan-50' : 'bg-white'}`}
-          >
-            {/* Header */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4">
-              <h3 className="text-2xl font-bold text-gray-800">{customer.name}</h3>
-              <span className="text-sm text-gray-500 md:ml-2 italic">&lt;{customer.email}&gt;</span>
-            </div>
-
-            {/* Info */}
-            <div className="text-gray-700 mb-4 space-y-1">
-              <p className="text-sm"><span className="font-semibold">Date:</span> {customer.date}</p>
-              <p className="text-sm"><span className="font-semibold">Subject:</span> {customer.subject}</p>
-            </div>
-
-            {/* Message */}
-            <div className="mb-4 border-l-4 border-orange-400 pl-4">
-              <p className="font-semibold text-gray-800 mb-1">Dear Omar,</p>
-              <p className="text-gray-700 text-sm leading-relaxed">{customer.massage}</p>
-            </div>
-
-            {/* Contact */}
-            <p className="text-gray-600 text-sm mb-4"><span className="font-semibold">Contact:</span> {customer.number}</p>
-
-            {/* Action */}
-            {customer.states === 'unread' && (
-              <button
-                onClick={() => handleStatesToggle(customer._id)}
-                className="bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl py-2 px-4 w-full transition-colors duration-200"
+      {customerInfo.length === 0 ? (
+        <div className="dashboard-panel p-10 text-center text-neutral-500">
+          No customer messages yet.
+        </div>
+      ) : (
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {customerInfo.map((customer) => {
+            const unread = customer.states === "unread";
+            return (
+              <article
+                key={customer._id}
+                className={`dashboard-panel flex flex-col p-6 transition-shadow hover:shadow-md ${
+                  unread ? "ring-2 ring-orange-200 ring-offset-2" : ""
+                }`}
               >
-                Mark as Read
-              </button>
-            )}
-          </div>
-        ))}
-      </div>
+                <div className="mb-4 flex items-start justify-between gap-2">
+                  <h3 className="font-serif text-xl text-neutral-900">{customer.name}</h3>
+                  {unread && (
+                    <span className="shrink-0 rounded-full bg-orange-500 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-white">
+                      New
+                    </span>
+                  )}
+                </div>
+                <p className="mb-3 truncate text-sm text-neutral-500">{customer.email}</p>
+
+                <div className="mb-4 space-y-1 text-sm text-neutral-600">
+                  <p>
+                    <span className="font-medium text-neutral-800">Date:</span> {customer.date}
+                  </p>
+                  <p>
+                    <span className="font-medium text-neutral-800">Subject:</span>{" "}
+                    {customer.subject}
+                  </p>
+                  <p>
+                    <span className="font-medium text-neutral-800">Phone:</span> {customer.number}
+                  </p>
+                </div>
+
+                <div className="mb-4 flex-1 rounded-xl border-l-4 border-orange-400 bg-neutral-50 py-3 pl-4 pr-3">
+                  <p className="text-sm leading-relaxed text-neutral-700">{customer.massage}</p>
+                </div>
+
+                {unread && (
+                  <button
+                    type="button"
+                    onClick={() => handleStatesToggle(customer._id)}
+                    className="btn-brand !w-full !py-2.5 !text-sm"
+                  >
+                    Mark as read
+                  </button>
+                )}
+              </article>
+            );
+          })}
+        </div>
+      )}
     </div>
   );
 };
