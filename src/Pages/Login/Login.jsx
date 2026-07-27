@@ -12,7 +12,7 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/dashboard";
 
-  const handleLogin = (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     const form = event.target;
     const email = form.email.value;
@@ -21,14 +21,13 @@ const Login = () => {
     setError("");
     setSuccess("");
 
-    signIn(email, password)
-      .then(() => {
-        navigate(from, { replace: true });
-        setSuccess("Successfully logged in");
-      })
-      .catch((err) => {
-        setError(err.message);
-      });
+    try {
+      await signIn(email, password);
+      setSuccess("Successfully logged in");
+      navigate(from, { replace: true });
+    } catch (err) {
+      setError(err.message || "Login failed. Please try again.");
+    }
   };
 
   const togglePasswordVisibility = () => {
