@@ -1,6 +1,5 @@
 import { motion } from "framer-motion";
 import logo from '../../../assets/logo.png';
-import omar from '../../../assets/omar.png';
 import SectionReveal from '../../../components/motion/SectionReveal';
 
 const Footer = () => {
@@ -15,9 +14,11 @@ const Footer = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.55 }}
           >
-            <a href="/" className="flex items-center group justify-center md:justify-start">
-              <img src={logo} className="h-12 sm:h-14 md:h-16 mr-2 sm:mr-3" alt="Omar Logo" />
-              <img src={omar} className="h-8 sm:h-10 md:h-12" alt="Omar Text Logo" />
+            <a href="/" className="flex items-center gap-2.5 sm:gap-3 group justify-center md:justify-start">
+              <img src={logo} className="h-10 w-10 sm:h-12 sm:w-12 md:h-14 md:w-14 shrink-0" alt="Omar Logo" />
+              <span className="font-quick text-2xl sm:text-3xl md:text-4xl font-semibold tracking-[0.14em] text-white group-hover:text-orange-400 transition-colors">
+                OMAR
+              </span>
             </a>
 
             <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 sm:gap-8 text-center sm:text-left">
@@ -49,7 +50,8 @@ const Footer = () => {
           <hr className="border-gray-800 my-5 sm:my-6" />
 
           <p className="text-xs sm:text-sm text-gray-500 text-center md:text-left leading-relaxed">
-            OMAR © 2024 — Developed by{' '}
+            <span className="font-quick font-semibold tracking-[0.12em] text-gray-400">OMAR</span>
+            {' '}© 2024 — Developed by{' '}
             <a href="https://www.linkedin.com/in/abdullah958/" className="text-orange-400/90 hover:text-orange-400 transition-colors">
               ABDULLAH
             </a>

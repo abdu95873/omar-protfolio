@@ -23,8 +23,8 @@ const Blog = () => {
   }, []);
 
   return (
-    <SectionReveal className="section-shell !pt-6 sm:!pt-8">
-      <SectionHeading label="BLOG" title="LATEST STORIES & INSIGHTS" />
+    <SectionReveal className="section-shell !pt-6 sm:!pt-8" once={false}>
+      <SectionHeading label="BLOG" title="LATEST STORIES & INSIGHTS" once={false} />
 
       <section className="relative md:min-h-[100vh] lg:min-h-[120vh]">
         <div className="mx-auto max-w-6xl flex flex-col gap-6 md:block">
@@ -42,7 +42,7 @@ const Blog = () => {
               }}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-60px" }}
+              viewport={{ once: false, margin: "-60px", amount: 0.2 }}
               transition={{ duration: 0.5, delay: index * 0.05 }}
             >
               <div className="w-full h-full px-4 sm:px-6 md:px-10 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 items-center">

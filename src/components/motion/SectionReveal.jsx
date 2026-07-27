@@ -34,6 +34,7 @@ const SectionReveal = ({
   delay = 0,
   as = "section",
   id,
+  once = true,
 }) => {
   const Component = motion[as] || motion.section;
 
@@ -43,7 +44,7 @@ const SectionReveal = ({
       className={className}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.15, margin: "-60px" }}
+      viewport={{ once, amount: 0.15, margin: "-60px" }}
       variants={{
         hidden: { opacity: 0, y: 36 },
         visible: {

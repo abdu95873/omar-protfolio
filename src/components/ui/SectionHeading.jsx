@@ -1,6 +1,13 @@
 import { motion } from "framer-motion";
 
-const SectionHeading = ({ label, title, subtitle, align = "center", className = "" }) => {
+const SectionHeading = ({
+  label,
+  title,
+  subtitle,
+  align = "center",
+  className = "",
+  once = true,
+}) => {
   const alignClass =
     align === "left" ? "text-left" : align === "right" ? "text-right" : "text-center";
 
@@ -9,7 +16,7 @@ const SectionHeading = ({ label, title, subtitle, align = "center", className = 
       className={`space-y-3 sm:space-y-4 mb-8 sm:mb-12 lg:mb-16 ${alignClass} ${className}`}
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-40px" }}
+      viewport={{ once, margin: "-40px" }}
       transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
     >
       {label && (
